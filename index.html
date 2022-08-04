@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactJS</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const root = document.getElementById('root')
+        // const p = React.createElement('p', null, 'Ceci est mon paragraphe');
+        const p = React.createElement('p', {children: 'Ceci est mon paragraphe'})
+
+        let h1 = React.createElement('h1', {children: p})
+
+        // console.log(h1);
+
+        
+        
+        //2-Le JSWX et les Propos
+        // const title = "2-Coucou les amis !";
+
+         // 3-Créer un composant et intégrer dans template
+         //const MyCompo = function() {
+            //return (
+            //    <section>
+              //      <h1>{title}</h1>
+                //</section>
+           // )
+        //}
+
+        //ou 
+
+        // const MyCompo2 = () => {
+          //  (
+             //   <section>
+                //    <h1>{title}</h1>
+             //   </section>
+          //  )
+       // }
+
+         //ou
+        
+        //function MyCompo3 () {
+            
+            //return (
+             //   <section>
+            //        <h1>{title}</h1>
+            //    </section>
+           // )
+       // };
+
+        //2-Le JSWX et les Propos
+        //const template = (
+             //<main>
+                 //<section>
+                    // <h1>1-Coucou les amis !</h1>
+                     //<h1>{title}</h1>
+                     //< MyCompo />
+                // </section>
+            // </main>
+         //);
+
+        // 4-Passer des props à un composant
+        //const MyCompo = function(props) {
+            // console.log(props);
+            //return (
+                //<section>
+                //    <h1>{props.data}</h1>
+               // </section>
+            //)
+        //}
+
+        // ou 
+        const MyCompo = function({data}) {
+            // console.log(props);
+            return (
+                <section>
+                    <h1>{data}</h1>
+                </section>
+            )
+        }
+
+        //4-Passer des props à un composant
+       function Template2() {
+        const title = "4-Coucou les amis !";
+            return(
+                <main>
+                    < MyCompo data={title}/>
+                </main>
+            );
+       } 
+        
+
+        // exemple 1 à 3 : à alterner
+        // ReactDOM.render(template, root);
+
+        // Exple 4
+        ReactDOM.render(<Template2 />, root);
+
+    </script>
+</body>
+</html>
